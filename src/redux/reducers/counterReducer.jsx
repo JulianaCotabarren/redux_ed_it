@@ -1,7 +1,7 @@
 import { types } from "../types/counterTypes"
 
 const initialState = {
-    counter: 3
+    counter: 0
 }
 
 export default (state = initialState, { type, payload }) => {
@@ -20,6 +20,11 @@ export default (state = initialState, { type, payload }) => {
         return { 
             ...state, 
             counter : 0 
+        }
+    case types.SUMAR_NUM :
+        return { 
+            ...state, 
+            counter : state.counter + payload 
         }
 
   default:
