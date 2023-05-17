@@ -16,3 +16,8 @@ export const counterSumarNumero = (numero) => ({
     type: types.SUMAR_NUM,
     payload: numero
 })
+
+export const counterSetTemporal = (numero) => ({
+    type: types.SET_TEMPORAL,
+    payload: numero
+})

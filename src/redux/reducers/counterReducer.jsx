@@ -1,7 +1,8 @@
 import { types } from "../types/counterTypes"
 
 const initialState = {
-    counter: 0
+    counter: 0,
+    temporal: 0
 }
 
 export default (state = initialState, { type, payload }) => {
@@ -26,6 +27,11 @@ export default (state = initialState, { type, payload }) => {
             ...state, 
             counter : state.counter + payload 
         }
+    case types.SET_TEMPORAL :
+    return { 
+        ...state, 
+        temporal : payload 
+    }
 
   default:
     return state
