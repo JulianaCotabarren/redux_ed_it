@@ -1,3 +1,6 @@
-import { createStoreHook } from "react-redux";
+import { combineReducers, createStore } from "redux";
+import reducers from './reducers'
 
-export const store = createStoreHook()
+const store = createStore(combineReducers(reducers))
+
+export default store
