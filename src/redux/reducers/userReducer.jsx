@@ -1,18 +1,31 @@
 import { types } from "../types/userTypes"
 
 const initialState = {
-    name:"Pepe",
-    userName: "usuariopepe",
-    password:"pepe1234"
+    name:"",
+    userName: "",
+    password:""
 }
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
-
-  case types.CHANGE_NAME:
+    case types.CHANGE_NAME:
+      return { 
+        ...state, 
+        name: payload 
+      }
+    case types.CHANGE_USERNAME:
     return { 
         ...state, 
-        name: "Pepa" 
+        userName: payload 
+    }
+    case types.CHANGE_PASSWORD:
+    return { 
+        ...state, 
+        password: payload 
+    }
+    case types.RESET:
+    return { 
+        state : initialState
     }
 
   default:
